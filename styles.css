@@ -1,2 +1,8 @@
 body {
+    background-color: gainsboro;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.results {
+    background-color: darkseagreen;
 }
