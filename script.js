@@ -59,6 +59,9 @@ document.querySelectorAll("button").forEach((button) => {
         console.log("no operator selected");
       }
     }
+    //if (button.className === "clear") {
+    //  clearAll();
+    //}
   });
 });
 
@@ -76,12 +79,25 @@ function operate() {
   switch (true) {
     case operator === "+":
       solution = equation[0] + equation[1];
+      solution = Math.round(solution * 100) / 100;
       break;
     case operator === "-":
+      solution = equation[0] - equation[1];
+      solution = Math.round(solution * 100) / 100;
       break;
     case operator === "/":
+      if (equation[1] === 0) {
+          console.log("No");
+          clearAll();
+          return;
+        } 
+
+      solution = equation[0] / equation[1];
+      solution = Math.round(solution * 100) / 100;
       break;
     case operator === "*":
+      solution = equation[0] * equation[1];
+      solution = Math.round(solution * 100) / 100;
       break;
     default:
       console.log("no operator");
@@ -96,4 +112,12 @@ function clearEquation() {
   equation = [];
   console.log("equation is:");
   console.table(equation);
+}
+
+function clearAll() {
+  operator = "";
+  number = "";
+  currentNumber = [];
+  equation = [];
+  solution = "";
 }
