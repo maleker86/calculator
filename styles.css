@@ -5,18 +5,32 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.container {
+    width: 50vw;
+    max-width: 300px;
+    margin:auto;
+    padding: 5px;
+    background-color: lightblue;
+}
+
 .results {
+    text-align:right;
     background-color: darkseagreen;
+    margin:5px;
 }
 
 .buttons {
+    justify-content:space-between;
+}
+
+.row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:space-between;
 }
 
-.container {
-    max-width: 50vw;
-    margin:auto;
+button {
+    flex: 1;
+    margin: 0 5px;
 }
