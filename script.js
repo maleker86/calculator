@@ -59,9 +59,9 @@ document.querySelectorAll("button").forEach((button) => {
         console.log("no operator selected");
       }
     }
-    //if (button.className === "clear") {
-    //  clearAll();
-    //}
+    if (button.className === "clear") {
+     clearAll();
+    }
   });
 });
 
