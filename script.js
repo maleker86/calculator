@@ -1,8 +1,22 @@
-let operand1 = "";
-let operand2 = "";
 let operator = "";
-const operands = [];
-const operators = [];
+let currentNumber = [];
+let equation = [];
+let solution;
+
+//press numbers
+//add numbers to currentNumber
+//press + etc
+//add numbers to equation, joined
+//remove numbers from currentNumber
+//press numbers
+//add numbers to currentNumber
+//press =
+//add numbers to equation, joined
+//remove numbers from currentNumber
+//equate them
+//show a solution
+//add solution to equation
+//clear to clear the number
 
 //array.unshift() is opposite of array.push()
 
@@ -10,31 +24,76 @@ const operators = [];
 document.querySelectorAll("button").forEach((button) => {
   button.addEventListener("click", (event) => {
     if (button.className === "operand") {
-      if (!operator) {
-        if (!operand1) {
-          operand1 = button.textContent;
-          console.log(`o1 is ${operand1}`);
-        } else {
-          operand1 += button.textContent;
-          console.log(`o1 is ${operand1}`);
-        }
-      } else {
-        if (!operand2) {
-          operand2 = button.textContent;
-          console.log(`o2 is ${operand2}`);
-        } else {
-          operand2 += button.textContent;
-          console.log(`o2 is ${operand2}`);
-        }
-      }
+      let number = Number(button.textContent);
+      currentNumber.push(number);
+    //  console.log(typeof currentNumber[0]);
+      console.log("current number is: ");
+      console.table(currentNumber);
     }
     if (button.className === "operator") {
-      if (!operator) {
-        operator = button.textContent;
-        console.log(`o3 is ${operator}`);
+      operator = button.textContent;
+      console.log(`operator is ${operator}`);
+      
+      if (currentNumber.length !== 0) {
+        getCurrentNumber();
+      }
+      }
+    if (button.className === "operate") {
+      getCurrentNumber();
+      if (operator) {
+        operate();
+        clearEquation();
+        console.log("equation is:");
+        console.table(equation);
+        equation.push(solution);
+        console.log("equation is now:");
+        console.table(equation);
+        solution = "";
+        console.log("solution is:");
+        console.log(solution);
+
+        operator = "";
+        console.log("operator is:");
+        console.log(operator);
       } else {
-        return;
+        console.log("no operator selected");
       }
     }
   });
 });
+
+function getCurrentNumber() {
+  equation.push(Number(currentNumber.join("")));
+  console.log("equation is:");
+  console.table(equation);
+  // console.log(typeof equation[0]);
+  currentNumber = [];
+  console.log("currentnumber is:");
+  console.table(currentNumber);
+}
+
+function operate() {
+  switch (true) {
+    case operator === "+":
+      solution = equation[0] + equation[1];
+      break;
+    case operator === "-":
+      break;
+    case operator === "/":
+      break;
+    case operator === "*":
+      break;
+    default:
+      console.log("no operator");
+      break;
+  }
+  console.log(`solution is: ${solution}`);
+  return solution; 
+  //console.log(typeof solution);
+}
+
+function clearEquation() {
+  equation = [];
+  console.log("equation is:");
+  console.table(equation);
+}
