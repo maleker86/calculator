@@ -20,7 +20,10 @@ body {
 }
 
 .buttons {
-    justify-content:space-between;
+    display:flex;
+    /* flex-direction: column; */
+    justify-content:space-around;
+    background-color: yellow;
 }
 
 .row {
@@ -28,6 +31,24 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:space-between;
+    /* background-color: green; */
+}
+
+.operands {
+    flex:2;
+}
+
+.operators {
+    display:flex;
+    flex-direction: column;
+    background-color: pink;
+}
+
+.operate {
+    display:flex;
+    flex:1;
+    flex-direction: row;
+    background-color: red;
 }
 
 button {
