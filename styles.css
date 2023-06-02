@@ -14,6 +14,14 @@ button:focus {
     background-color:khaki;
 }
 
+p {
+    text-align: center;
+}
+
+footer {
+    font-size: .8em;
+}
+
 .container {
     display:flex;
     flex-direction: column;
@@ -59,8 +67,4 @@ button:focus {
     display:flex; 
     flex-direction: column;
     align-items: space-around;
-}
-
-#error {
-    text-align: center;
 }
