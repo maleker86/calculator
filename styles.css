@@ -5,7 +5,18 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+button {
+    flex: 1;
+    margin: 0 5px;
+}
+
+button:focus {
+    background-color:khaki;
+}
+
 .container {
+    display:flex;
+    flex-direction: column;
     width: 50vw;
     max-width: 300px;
     margin:auto;
@@ -20,12 +31,10 @@ body {
     min-height:20px;
 }
 
-.buttons {
+.main {
     flex: 1;
     display:flex;
-    /* flex-direction: column; */
     justify-content:space-around;
-    background-color: yellow;
 }
 
 .row {
@@ -33,28 +42,21 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:space-between;
-    /* background-color: green; */
 }
 
 .operands {
-    flex:2;
+    flex:3;
 }
 
 .operators {
     flex:1;
     display:flex;
     flex-direction: column;
-    background-color: pink;
 }
 
-.operate {
-    /* flex:1; */
-    display:flex;
-    flex-direction: row;
-    background-color: red;
-}
-
-button {
+.operates {
     flex: 1;
-    margin: 0 5px;
+    display:flex; 
+    flex-direction: column;
+    align-items: space-around;
 }
