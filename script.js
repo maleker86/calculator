@@ -3,9 +3,13 @@ let currentNumber = [];
 let equation = [];
 let solution;
 let resultDisplay = document.getElementById("results");
+let errorDisplay = document.getElementById("error");
 
 document.querySelectorAll("button").forEach((button) => {
   button.addEventListener("click", (event) => {
+
+      errorDisplay.textContent = "";
+
     if (button.className === "operand") {
       let number = Number(button.textContent);
       currentNumber.push(number);
@@ -81,7 +85,10 @@ function operate() {
     case operator === "/":
       if (equation[1] === 0) {
         console.log("No");
+
+        errorDisplay.textContent = "You cannot";
         clearAll();
+        solution = "0";
         return;
       }
       solution = equation[0] / equation[1];
